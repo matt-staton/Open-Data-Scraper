@@ -1,0 +1,24 @@
+from bs4 import BeautifulSoup
+import pandas as pd
+from pandas import DataFrame, Series
+soup=BeautifulSoup(html) #change to URL
+
+tag_body = soup.body
+tag_table =tag_body.find_all("table")
+tag_data = tag_table[3]
+#tag_tr = tag_data.find_all("tr")
+data_all=[] 
+tag_tr = tag_data.find_all("tr") # finds tr tag
+for j in range(3, len(tag_tr)):
+    tag_sample = tag_tr[j] # starts reading from 4th 'tr' tag 
+    list_td = list(tag_sample.find_all('td')) #result set
+    a = tag_sample.find_all('td') # tag
+    print a[2].text
+    #print a[2].text
+    #for i in range(1, len(list_td)):
+        #b=a[i].text
+        #print b
+        #print list_td[i].text.encode()
+        #data_all.append(list_td[i].text.encode())
+        #print data_all
+        #result = list(list_td.find_all('tr'))
