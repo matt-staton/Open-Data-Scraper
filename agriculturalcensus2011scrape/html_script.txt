@@ -20,13 +20,6 @@ driver.get(url)
 driver.wait = WebDriverWait(driver, 2)
 
 
-#print(sizeclass_Val)
-varfilename = "agcensus_column_names.csv"
-#input_path = r'./' ##C:\Users\malaniaayushi\Desktop
-#agcensus_vars = pd.read_csv(input_path + varfilename)
-#columns =list(agcensus_vars.sources_of_irrigation)
-#col_string = ','.join(columns)
-
 sizeclass_Select = Select(driver.find_element_by_id("_ctl0_ContentPlaceHolder1_DropDownList5")) 
 
 sizeclass_Val = {}
