@@ -57,22 +57,25 @@ for sizeclass in sizeclass_val.keys(): # loop through each sizeclass
                 time.sleep(4)
                 continue
             driver.get(tabUrlBody + table + ".aspx")
-            time.sleep(4)
-            # soup=BeautifulSoup(driver.page_source,"html.parser")
-            # tag_body = soup.body
-            # tag_table =tag_body.find_all("table")
-            # tag_data = tag_table[3]
-            # tag_tr = tag_data.find_all("tr")
-            # data_all = pd.DataFrame()
-            # samplist=[]
-            # for i in range(3,len(tag_tr)): 
-            #     data = tag_tr[i].get_text(",", strip = True)
-            #     data_string = data.encode('utf-8')
-            #     data_list = data_string.split()
-            #     df = pd.DataFrame(data_list)
-            #     data_all = data_all.append(df)
+            time.sleep(3)
+            soup=BeautifulSoup(driver.page_source,"html.parser")
+            tag_body = soup.body
+            tag_table =tag_body.find_all("table")
+            tag_data = tag_table[3]
+            tag_tr = tag_data.find_all("tr")
+            data_all = pd.DataFrame()
+            samplist=[]
+            for i in range(3,len(tag_tr)): 
+                data = tag_tr[i].get_text(",", strip = True)
+                data_string = data.encode('utf-8')
+                data_list = data_string.split()
+                df = pd.DataFrame(data_list)
+                data_all = data_all.append(df)
             # #print data_all
-            # data_all.to_csv('./sample_2.csv', header = False, index = False, sep='\t')
+            
+            data_all.to_csv('./sample'+table+'.csv', header = False, index = False, sep='\t', mode = 'a', encoding = 'utf-8')
+            time.sleep(3)
+            
 
         driver.execute_script("window.history.go(-6)")# navigate back to mainpage without losing selections
         time.sleep(10)
