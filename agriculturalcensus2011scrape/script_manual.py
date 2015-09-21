@@ -12,7 +12,7 @@ import urlparse
 from bs4 import BeautifulSoup
 import pandas as pd
 from pandas import DataFrame, Series
-path_to_chromedriver = 'C:\Anaconda\selenium\webdriver\chromedriver' ##C:\Anaconda\selenium\webdriver
+path_to_chromedriver = '../../chromedriver' ##C:\Anaconda\selenium\webdriver
 
 driver = webdriver.Chrome(executable_path = path_to_chromedriver)
 url = r'http://agcensus.dacnet.nic.in/StateSizeClass.aspx'
