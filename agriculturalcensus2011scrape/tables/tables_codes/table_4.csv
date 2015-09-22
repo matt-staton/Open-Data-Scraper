@@ -1,4 +1,4 @@
-size_class,social_group,district_name,district_code,state_name,state_code,total_holdings_no,total_holdings_area,wholly_irrigated_holdings_no,wholly_irrigated_holdings_area,wholly_unirrigated_holdings_no,wholly_unirrigated_holdings_area,partly_irrigated_holdings_no,partly_irrigated_holdings_total_area,partly_irrigated_holdings_irrigated_area,holdings_receiving_irrigation_no,holdings_receiving_irrigation_net_irrigated_area
+size_class,social_group,district_name,district_code,state_name,state_code,holding_no,holding_ar,holding_whly_irri_no,holding_whly_irri_ar,holding_whly_rain_no,holding_whly_rain_ar,holding_prtly_irri_no,holding_prtly_irri_tot-ar,holding_prtly_irri_irri-ar,holding_recve_irri_no,holding_recve_irri_irri-ar
 ALL CLASSES,INSTITUTIONAL,ADILABAD,532,TELANGANA,37,58,537,19,76,36,197,0,0,0,19,76
 ALL CLASSES,INSTITUTIONAL,NIZAMABAD,533,TELANGANA,37,72,755,48,358,9,7,1,8,2,49,360
 ALL CLASSES,INSTITUTIONAL,KARIMNAGAR,534,TELANGANA,37,25,354,13,122,7,9,4,30,17,17,139

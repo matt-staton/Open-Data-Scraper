@@ -1,4 +1,4 @@
-size_class,social_group,district_name,district_code,state_name,state_code,total_holdings_no,total_holdings_area,net_area_sown,area_current_fallows,net_cultivated_area,uncultivated_land_excluding_fallow_land,fallow_land_excluding_current_fallow,culturable_waste_land,total_uncultivated_land,land_not_available_for_cultivation
+size_class,social_group,district_name,district_code,state_name,state_code,holding_no,holding_ar,sown_ar,current_fallows_ar,cultivated_ar,uncultivated-land_excluding_fallow,fallow_excluding_current-fallow,culturable_waste_land,uncultivated_land,land_not_for_cultivation
 ALL CLASSES,INSTITUTIONAL,ADILABAD,532,TELANGANA,37,58,537,273,264,537,0,0,0,0,0
 ALL CLASSES,INSTITUTIONAL,NIZAMABAD,533,TELANGANA,37,72,755,372,362,734,0,20,0,20,0
 ALL CLASSES,INSTITUTIONAL,KARIMNAGAR,534,TELANGANA,37,25,354,160,194,354,0,0,0,0,0
