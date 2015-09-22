@@ -21,9 +21,9 @@ driver.wait = WebDriverWait(driver, 2)
 
 tabUrlBody = "http://agcensus.dacnet.nic.in/sizestatedisplay" # url use later to navigate to other tables
 
-driver.find_element_by_xpath('//*[@id="_ctl0_ContentPlaceHolder1_Dropdownlist2"]//option[4]').click() # select AP
+driver.find_element_by_xpath('//*[@id="_ctl0_ContentPlaceHolder1_Dropdownlist2"]//option[4]').click() # select 2010-11
 time.sleep(2)
-driver.find_element_by_xpath('//*[@id="_ctl0_ContentPlaceHolder1_DropDownList1"]/option[2]').click() # select 2010-11
+driver.find_element_by_xpath('//*[@id="_ctl0_ContentPlaceHolder1_DropDownList1"]/option[2]').click() # select AP
 time.sleep(2)
 driver.find_element_by_xpath('//*[@id="_ctl0_ContentPlaceHolder1_DropDownList3"]/option[3]').click() # select landuse
 time.sleep(2)
