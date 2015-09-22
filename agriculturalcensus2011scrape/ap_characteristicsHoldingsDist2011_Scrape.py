@@ -28,10 +28,10 @@ time.sleep(2)
 driver.find_element_by_xpath('//*[@id="_ctl0_ContentPlaceHolder1_DropDownList3"]/option[3]').click() # select landuse
 time.sleep(2)
 
-sizeclass_Select = Select(driver.find_element_by_id("_ctl0_ContentPlaceHolder1_DropDownList5")) # retrieve all sizeclasses
+sizeclass_select = Select(driver.find_element_by_id("_ctl0_ContentPlaceHolder1_DropDownList5")) # retrieve all sizeclasses
 
 sizeclass_val = {}
-for val in sizeclass_Select.options:
+for val in sizeclass_select.options:
     sizeclass_val[val.get_attribute('value')] = val.text # populate all sizeclasses
 #print sizeclass_val
 
