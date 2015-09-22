@@ -33,14 +33,14 @@ sizeclass_Select = Select(driver.find_element_by_id("_ctl0_ContentPlaceHolder1_D
 sizeclass_val = {}
 for val in sizeclass_Select.options:
     sizeclass_val[val.get_attribute('value')] = val.text # populate all sizeclasses
-print sizeclass_val
+#print sizeclass_val
 
 socialgroup_select = Select(driver.find_element_by_id("_ctl0_ContentPlaceHolder1_DropDownList4")) # social groups
 socialgroup_val = {}
 for val in socialgroup_select.options:
     socialgroup_val[val.get_attribute('value')] = val.text # populate social groups
 
-print socialgroup_val
+#print socialgroup_val
 url_append = ['3','2a','4','5a','6a','7'] # table numbers to be appended to tabUrlBody
 #url_samp = ['3','2a']
 
@@ -73,7 +73,7 @@ for sizeclass in sizeclass_val.keys(): # loop through each sizeclass
                 #print data
                 #data_string = data.encode('utf-8')
                 data_list = data.split('_') # dummy string to ensure that default splitting over ' ' does not happen
-                print data_list
+                #print data_list
                 df = pd.DataFrame(data_list)
                 data_all = data_all.append(df)
             # #print data_all
