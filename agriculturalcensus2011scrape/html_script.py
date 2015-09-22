@@ -78,7 +78,7 @@ for sizeclass in sizeclass_val.keys(): # loop through each sizeclass
                 data_all = data_all.append(df)
             # #print data_all
             
-            data_all.to_csv('./sample'+table+'.csv', header = False, index = False, sep='\t', mode = 'a', encoding = 'utf-8')
+            data_all.to_csv('./tables/table_'+table+'.csv', header = False, index = False, sep='\t', mode = 'a', encoding = 'utf-8')
             time.sleep(3)
             
 
