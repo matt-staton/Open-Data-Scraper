@@ -1,4 +1,3 @@
-from bs4 import BeautifulSoup
 import pandas as pd
 from pandas import DataFrame, Series
 from selenium import webdriver
@@ -13,23 +12,23 @@ import re
 import string
 import urlparse
 
-soup = BeautifulSoup(html)
 path_to_chromedriver = 'C:\Anaconda\selenium\webdriver\chromedriver' ##C:\Anaconda\selenium\webdriver
 
 driver = webdriver.Chrome(executable_path = path_to_chromedriver)
-url = r'http://www.censusindia.gov.in/2011census/dchb/DCHB.html'
-driver.get(url) 
-driver.wait = WebDriverWait(driver, 2)
+url = r'http://www.censusindia.gov.in/2011census/dchb/DCHB_Village_Release_'#3500.xlsx'
+readfile_path = "C:\Users\malaniaayushi\Downloads\DCHB_Village_Release_"
+data_all = pd.DataFrame()
+for i in range(1,2):
+    if len(str(i))==1:
+        state_code = "0" + str(i) +"00.xlsx"
+         
+    else:
+        state_code = str(i) +"00.xlsx"
+    url_state = url + state_code
+    print url_state
+    driver.get(url_state) 
+    driver.wait = WebDriverWait(driver, 10)
+    data = pd.read_excel(readfile_path + state_code)
+    data_all = data_all.append(data)
+data_all.to_csv("C:\Users\malaniaayushi\Desktop\data_all")
 
-soup=BeautifulSoup(driver.page_source,"html.parser")
-
-#driver.find_element_by_partial_link_text('DCHB_Village').click()
-driver.find_element_by_link_text('DCHB_Village_Release_3500.xlsx').click()
-
-time.sleep(2)
-
-
-#tbody_result=soup.find_all("tbody")
-#tag_tr = tbody_result[4].find_all("tr")
-#result_td = tag_tr[7].find_all("td")
-#driver_td = result_td[3]
