@@ -27,12 +27,12 @@ driver.find_element_by_xpath('//*[@id="_ctl0_ContentPlaceHolder1_DropDownList3"]
 time.sleep(2)
 
 #####--------populate all states--------#####
-state_select = Select(driver.find_element_by_id("_ctl0_ContentPlaceHolder1_Dropdownlist1"))
+state_select = Select(driver.find_element_by_xpath('//*[@id="_ctl0_ContentPlaceHolder1_DropDownList1"]'))
 
 state_val = {}
 for val in state_select.options:
     state_val[val.get_attribute('value')] = val.text  
-#print state_val
+print state_val
 #state_val.pop('1a') # remove andhra pradesh since data has already been scraped
 
 #####--------populate all sizeClasses--------#####
@@ -54,7 +54,7 @@ url_append = ['3','2a','4','5a','6a','7'] # table numbers to be appended to tabU
 
 ##### -------- start browsing through dropdowns and retrieve results --------- #####
 for state in state_val.keys(): # loop through each state
-    driver.find_element_by_xpath('//*[@id="_ctl0_ContentPlaceHolder1_DropDownList1"]/option[@value=' + state + ']').click()
+    driver.find_element_by_xpath("//*[@id=\"_ctl0_ContentPlaceHolder1_DropDownList1\"]/option[@value=" + '"'+ state +'"' + "]").click()
     time.sleep(2)
 
     for sizeclass in sizeclass_val.keys(): # loop through each sizeclass
