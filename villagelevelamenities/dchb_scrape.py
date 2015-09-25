@@ -18,10 +18,8 @@ driver = webdriver.Chrome(executable_path = path_to_chromedriver)
 url = r'http://www.censusindia.gov.in/2011census/dchb/DCHB_Village_Release_'#3500.xlsx'
 readfile_path = "C:\Users\malaniaayushi\Downloads\DCHB_Village_Release_"
 output_path = "C:\Users\malaniaayushi\Desktop\data_all.csv"
-
 data_all = pd.DataFrame()
-
-for i in range(1,36):
+for i in range(1,4):
     if len(str(i))==1:
         state_code = "0" + str(i) +"00.xlsx"
          
@@ -30,7 +28,9 @@ for i in range(1,36):
     url_state = url + state_code
     print url_state
     driver.get(url_state) 
-    driver.wait = WebDriverWait(driver, 100)
+    if os.path.exists(readfile_path + state_code) == False:
+        driver.wait = WebDriverWait(driver, 10)
+    
     data = pd.read_excel(readfile_path + state_code)
     data_all = data_all.append(data)
 data_all.to_csv(output_path)
