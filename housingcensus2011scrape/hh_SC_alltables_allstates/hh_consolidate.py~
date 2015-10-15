@@ -1,0 +1,116 @@
+
+import pandas as pd
+from pandas import DataFrame, Series
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.common.exceptions import TimeoutException
+from selenium.webdriver.support.ui import Select
+import random
+import time
+import re
+import string
+import urlparse
+import os
+import shutil
+
+readfile_path = "//home//isb//Downloads//DDW-HH"
+#url_total = "http://www.censusindia.gov.in/2011census/Hlo-series/Hl-data/DDW-HH"
+output_path = "//home//isb//Documents//nikita//scrapping_data//Open-Data-Scraper//housingcensus2011scrape//hh_SC_alltables_allstates//DDW-HH"
+table_names_hh = ("01","02A","02B","02C","03","04","05","06","07","08","09","10","11","12","13")
+
+#table_names_hh = {"01"}
+x=2
+for i in table_names_hh: #table names 
+    # url_categories = url + i + ".html"
+    # print url_categories
+    
+
+    if len(str(x))==1:
+        x1 = "0"+str(x)
+    else:
+        x1 = str(x)
+    readfile_path1 = readfile_path + x1 + i +"C"
+    #output_path1 = output_path +x1+i
+    
+    table_folder = "//home//isb//Documents//nikita//scrapping_data//Open-Data-Scraper//housingcensus2011scrape//hh_SC_alltables_allstates//HH_table_" + i +"C"
+    os.makedirs(table_folder)
+    #print url_total1
+    output_path1 = table_folder + "//DDW-HH" + x1 + i +"C"
+    data_all = pd.DataFrame()
+    for j in range(0,36):
+        if len(str(j))==1:
+            state_code = "0" +str(j)+"00.xls"
+        else:
+            state_code = str(j) + "00.xls"
+        #url_final = url_total1 + "-" +state_code
+        old_loc = readfile_path1 + "-" + state_code
+        new_loc = output_path1 + "-" + state_code
+        if os.path.exists(old_loc) == False:
+            print "HH_table_" + x1 + i +"C" + "-" + state_code
+        else:
+            shutil.move(old_loc, new_loc)
+    x=x+3
+
+## no data was present for below tables ##
+HH_table_0201C-1200.xls
+HH_table_0201C-1300.xls
+HH_table_0201C-3100.xls
+HH_table_0201C-3500.xls
+HH_table_0502AC-1200.xls
+HH_table_0502AC-1300.xls
+HH_table_0502AC-3100.xls
+HH_table_0502AC-3500.xls
+HH_table_0802BC-1200.xls
+HH_table_0802BC-1300.xls
+HH_table_0802BC-3100.xls
+HH_table_0802BC-3500.xls
+HH_table_1102CC-1200.xls
+HH_table_1102CC-1300.xls
+HH_table_1102CC-3100.xls
+HH_table_1102CC-3500.xls
+HH_table_1403C-1200.xls
+HH_table_1403C-1300.xls
+HH_table_1403C-3100.xls
+HH_table_1403C-3500.xls
+HH_table_1704C-1200.xls
+HH_table_1704C-1300.xls
+HH_table_1704C-3100.xls
+HH_table_1704C-3500.xls
+HH_table_2005C-1200.xls
+HH_table_2005C-1300.xls
+HH_table_2005C-3100.xls
+HH_table_2005C-3500.xls
+HH_table_2306C-1200.xls
+HH_table_2306C-1300.xls
+HH_table_2306C-3100.xls
+HH_table_2306C-3500.xls
+HH_table_2607C-1200.xls
+HH_table_2607C-1300.xls
+HH_table_2607C-3100.xls
+HH_table_2607C-3500.xls
+HH_table_2908C-1200.xls
+HH_table_2908C-1300.xls
+HH_table_2908C-3100.xls
+HH_table_2908C-3500.xls
+HH_table_3209C-1200.xls
+HH_table_3209C-1300.xls
+HH_table_3209C-3100.xls
+HH_table_3209C-3500.xls
+HH_table_3510C-1200.xls
+HH_table_3510C-1300.xls
+HH_table_3510C-3100.xls
+HH_table_3510C-3500.xls
+HH_table_3811C-1200.xls
+HH_table_3811C-1300.xls
+HH_table_3811C-3100.xls
+HH_table_3811C-3500.xls
+HH_table_4112C-1200.xls
+HH_table_4112C-1300.xls
+HH_table_4112C-3100.xls
+HH_table_4112C-3500.xls
+HH_table_4413C-1200.xls
+HH_table_4413C-1300.xls
+HH_table_4413C-3100.xls
+HH_table_4413C-3500.xls
